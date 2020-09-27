@@ -11,19 +11,19 @@ namespace SerializeDeserialize
         {
 
         }
-        public GlyphData(string? fd, string? ck, int pn)
+        public GlyphData(Guid? fd, Guid? ck, int pn)
         {
             this.Fd = fd;
             this.Ck = ck;
-            this.pn = pn;
+            this.Pn = pn;
         }
-        public string? Fd { get; set; }
-        public string? Ck { get; set; }
-        public int pn { get; set; }
+        public Guid? Fd { get; set; }
+        public Guid? Ck { get; set; }
+        public int Pn { get; set; }
 
         public override string ToString()
         {
-            return  Fd + " " + pn;
+            return Fd + " " + Pn;
         }
     }
 }
