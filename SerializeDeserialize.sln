@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializeDeserialize", "SerializeDeserialize\SerializeDeserialize.csproj", "{AD161DDB-0DA6-4F34-B11D-9B8F9901C3B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializeDeserialize", "SerializeDeserialize\SerializeDeserialize.csproj", "{AD161DDB-0DA6-4F34-B11D-9B8F9901C3B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FON.IRC.Glyphs.JsonSerialization", "FON.IRC.Glyphs.JsonSerialization\FON.IRC.Glyphs.JsonSerialization.csproj", "{2A6C0D3C-9C11-4BC7-B96E-CCD547071D27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FON.IRC.Glyphs", "FON.IRC.Glyphs\FON.IRC.Glyphs.csproj", "{5735A598-9CB1-4A8D-B608-F3E59D1E8662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FON.IRC.Glyphs.Testing", "FON.IRC.Glyphs.Testing\FON.IRC.Glyphs.Testing.csproj", "{10C6C073-59D8-4C3E-BE99-CB9CD8184335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FON.IRC.Glyphs.JsonSerialization.JsonNET", "FON.IRC.Glyphs.JsonSerialization.JsonNET\FON.IRC.Glyphs.JsonSerialization.JsonNET.csproj", "{E4D3CC95-2345-49AB-A199-F4A7C99F9ED8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FON.IRC.Glyphs.JsonSerialization.Utf8Json", "FON.IRC.Glyphs.JsonSerialization.Utf8Json\FON.IRC.Glyphs.JsonSerialization.Utf8Json.csproj", "{CC257835-9F9A-4932-863E-4A829F9EF497}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{AD161DDB-0DA6-4F34-B11D-9B8F9901C3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD161DDB-0DA6-4F34-B11D-9B8F9901C3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD161DDB-0DA6-4F34-B11D-9B8F9901C3B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6C0D3C-9C11-4BC7-B96E-CCD547071D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6C0D3C-9C11-4BC7-B96E-CCD547071D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6C0D3C-9C11-4BC7-B96E-CCD547071D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6C0D3C-9C11-4BC7-B96E-CCD547071D27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5735A598-9CB1-4A8D-B608-F3E59D1E8662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5735A598-9CB1-4A8D-B608-F3E59D1E8662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5735A598-9CB1-4A8D-B608-F3E59D1E8662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5735A598-9CB1-4A8D-B608-F3E59D1E8662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C6C073-59D8-4C3E-BE99-CB9CD8184335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C6C073-59D8-4C3E-BE99-CB9CD8184335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C6C073-59D8-4C3E-BE99-CB9CD8184335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C6C073-59D8-4C3E-BE99-CB9CD8184335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D3CC95-2345-49AB-A199-F4A7C99F9ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D3CC95-2345-49AB-A199-F4A7C99F9ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D3CC95-2345-49AB-A199-F4A7C99F9ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D3CC95-2345-49AB-A199-F4A7C99F9ED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC257835-9F9A-4932-863E-4A829F9EF497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC257835-9F9A-4932-863E-4A829F9EF497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC257835-9F9A-4932-863E-4A829F9EF497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC257835-9F9A-4932-863E-4A829F9EF497}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

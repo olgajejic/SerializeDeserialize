@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SerializeDeserialize
+namespace FON.IRC.Glyphs
 {
     public class GlyphData
     {

@@ -7,32 +7,17 @@ using System.Text;
 
 namespace SerializeDeserialize
 {
-    public class Serialization
+    public class Benchamark
     {
-       
+        private string source;
 
-        List<GlyphData> data;
-        private readonly Random _random = new Random();
-        public Serialization()
+        public void Setup()
         {
-            //data = new List<GlyphData>();
-
-            //var before = DateTime.Now;
-
-           // string json = Serialize2(createData1());
-          
-
-           // Console.WriteLine(DateTime.Now - before);
-           // Console.ReadLine();
+            source = Serialize2(createData1());
         }
-
         public GlyphData createData1()
         {
-            return new GlyphData(null, new Guid(), RandomNumber(1, 1000000));
-            //for (int i = 0; i < 1000; i++)
-            //{
-            //    data.Add(new GlyphData(RandomString(RandomNumber(50, 156)), null, RandomNumber(1,1000000)));
-            //}
+            return new GlyphData(null, new Guid(), 123456789);
         }
 
         public string Serialize2(GlyphData gd)
@@ -62,24 +47,15 @@ namespace SerializeDeserialize
 
             return sw.ToString();
         }
-        [Benchmark]
-        public void Deserialize2(string json)
-        {
-            JsonTextReader reader = new JsonTextReader(new StringReader(json));
-            while (reader.Read())
-            {
-                //if (reader.Value != null)
-                //{
-                //Console.WriteLine("Token: {0}, Value: {1}", reader.TokenType, reader.Value);
-                Console.WriteLine(reader.Value);
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Token: {0}", reader.TokenType);
-                //}
-            }
 
+
+        [Benchmark]
+        public void Deserialize2()
+        {
+            JsonTextReader reader = new JsonTextReader(new StringReader(source));
+            reader.Read();
         }
+
 
         public string Serialize1(GlyphData gd)
         {
@@ -119,27 +95,6 @@ namespace SerializeDeserialize
             //    Console.WriteLine(e);
             //}
             // Console.ReadLine();
-        }
-
-        public int RandomNumber(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-
-        public string RandomString(int size, bool lowerCase = false)
-        {
-            var builder = new StringBuilder(size);
-
-            char offset = lowerCase ? 'a' : 'A';
-            const int lettersOffset = 26; // A...Z or a..z: length=26  
-
-            for (var i = 0; i < size; i++)
-            {
-                var @char = (char)_random.Next(offset, offset + lettersOffset);
-                builder.Append(@char);
-            }
-
-            return lowerCase ? builder.ToString().ToLower() : builder.ToString();
         }
     }
 }
