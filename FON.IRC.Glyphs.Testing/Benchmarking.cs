@@ -27,7 +27,11 @@ namespace FON.IRC.Glyphs.Testing
         {
             var json = (new JsonGlyphSerializer()).Serialize(_glyphSource);
         }
-
+        [BenchmarkCategory("Serialization"), Benchmark]
+        public void SerializeDotNetCustom()
+        {
+            var json = (new JsonGlyphSerializer()).Serialize1(_glyphSource);
+        }
         [BenchmarkCategory("Serialization"), Benchmark]
         public void SerializeJsonNETDefault()
         {
@@ -51,7 +55,11 @@ namespace FON.IRC.Glyphs.Testing
         {
             var glyph = (new JsonGlyphSerializer()).Deserialize(_jsonSource);
         }
-
+        [BenchmarkCategory("Deserialization"), Benchmark]
+        public void DeserializeDotNetCustom()
+        {
+            var glyph = (new JsonGlyphSerializer()).Deserialize1(_jsonSource);
+        }
         [BenchmarkCategory("Deserialization"), Benchmark]
         public void DeserializeJsonNETDefault()
         {
@@ -69,6 +77,8 @@ namespace FON.IRC.Glyphs.Testing
         {
             var glyph = (new JsonGlyphSerializeUtf8Json()).Deserialize(_jsonSource);
         }
+
+ 
 
     }
 }

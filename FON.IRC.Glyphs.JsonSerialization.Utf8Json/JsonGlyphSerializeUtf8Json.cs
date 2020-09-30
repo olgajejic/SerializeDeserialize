@@ -8,9 +8,8 @@ namespace FON.IRC.Glyphs.JsonSerialization.Utf8Json
 
         public string Serialize(GlyphData glyphData)
         {
-             var s = JsonSerializer.ToJsonString(glyphData);
+            return JsonSerializer.ToJsonString(glyphData);
 
-            return s;
         }
 
         public GlyphData Deserialize(string json)
