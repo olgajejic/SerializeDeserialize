@@ -49,10 +49,9 @@ namespace FON.IRC.Glyphs.JsonSerialization
             Utf8JsonReader reader = new Utf8JsonReader(Encoding.ASCII.GetBytes(json));
 
             GlyphData glyphData = null;
-
+            
             while (reader.Read())
             {
-
                 switch (reader.TokenType)
                 {
                     case JsonTokenType.StartObject:

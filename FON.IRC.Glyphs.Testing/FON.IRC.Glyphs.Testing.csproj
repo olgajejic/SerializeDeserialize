@@ -9,6 +9,7 @@
 		<ProjectReference Include="..\FON.IRC.Glyphs.JsonSerialization.JsonNET\FON.IRC.Glyphs.JsonSerialization.JsonNET.csproj" />
 		<ProjectReference Include="..\FON.IRC.Glyphs.JsonSerialization.Utf8Json\FON.IRC.Glyphs.JsonSerialization.Utf8Json.csproj" />
 		<ProjectReference Include="..\FON.IRC.Glyphs.JsonSerialization\FON.IRC.Glyphs.JsonSerialization.csproj" />
+		<ProjectReference Include="..\FON.IRC.Glyphs.ToFromString\FON.IRC.Glyphs.ToFromString.csproj" />
 		<ProjectReference Include="..\FON.IRC.Glyphs\FON.IRC.Glyphs.csproj" />
 	</ItemGroup>
 

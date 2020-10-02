@@ -2,9 +2,12 @@
 using BenchmarkDotNet.Configs;
 using FON.IRC.Glyphs.JsonSerialization;
 using FON.IRC.Glyphs.JsonSerialization.Utf8Json;
+using FON.IRC.Glyphs.ToFromString;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Utf8Json;
+using Utf8Json.Resolvers;
 
 namespace FON.IRC.Glyphs.Testing
 {
@@ -18,6 +21,7 @@ namespace FON.IRC.Glyphs.Testing
         [GlobalSetup]
         public void Setup()
         {
+            CompositeResolver.RegisterAndSetAsDefault(new IJsonFormatter[] { new GlyphDataFormatter() }, new[] { StandardResolver.Default });
             _glyphSource = new GlyphData() { FormDefinitionKey = Guid.NewGuid(), PageNumber = 1 };
             _jsonSource = (new JsonGlyphSerializer()).Serialize(_glyphSource);
         }
@@ -49,7 +53,16 @@ namespace FON.IRC.Glyphs.Testing
         {
             var json = (new JsonGlyphSerializeUtf8Json()).Serialize(_glyphSource);
         }
-       
+        [BenchmarkCategory("Serialization"), Benchmark]
+        public void SerializeUtf8JsonCustom()
+        {
+            var json = (new JsonGlyphSerializeUtf8Json()).Serialize(_glyphSource);
+        }
+        [BenchmarkCategory("ToString"), Benchmark]
+        public void GlyphDataToString()
+        {
+            var json = (new GlyphData()).ToString();
+        }
         [BenchmarkCategory("Deserialization"), Benchmark]
         public void DeserializeDotNetDefault()
         {
@@ -77,8 +90,16 @@ namespace FON.IRC.Glyphs.Testing
         {
             var glyph = (new JsonGlyphSerializeUtf8Json()).Deserialize(_jsonSource);
         }
-
- 
+        [BenchmarkCategory("Deserialization"), Benchmark]
+        public void DeserializeUtf8JsonCustom()
+        {
+            var glyph = (new JsonGlyphSerializeUtf8Json()).Deserialize(_jsonSource);
+        }
+        [BenchmarkCategory("ToString"), Benchmark]
+        public void GlyphDataFromString()
+        {
+            var json = (new GlyphFromString()).FromString((new GlyphData()).ToString());
+        }
 
     }
 }
